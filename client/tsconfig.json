@@ -6,11 +6,23 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"allowSyntheticDefaultImports": true,
-		"target": "es2017",
+		"target": "es5",
 		"sourceMap": true,
 		"outDir": "./dist",
 		"baseUrl": "./",
 		"incremental": true,
-		"skipLibCheck": true
-	}
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react",
+		"strictFunctionTypes": false
+	},
+	"include": ["src"]
 }
