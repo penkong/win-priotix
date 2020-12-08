@@ -7,7 +7,7 @@ import { Module } from '@nestjs/common'
 import { DatabaseModule } from '../../../Database'
 import { TournamentsController } from './tournaments.controller'
 import { TournamentsService } from './tournaments.service'
-import { tournamentsProviders } from './models/'
+import { tournamentsProviders } from './models'
 
 // -----------------------------------------------------------------
 

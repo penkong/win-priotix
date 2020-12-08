@@ -9,13 +9,29 @@ import * as mongoose from 'mongoose'
 
 export const TournamentsSchema = new mongoose.Schema(
 	{
-		email: {
+		username: {
 			type: String,
 			required: true
 		},
-		password: {
+		tournamnet_id: {
 			type: String,
 			required: true
+		},
+		title: {
+			type: String,
+			required: true
+		},
+		imageUrl: {
+			type: String,
+			required: true
+		},
+		description: {
+			type: String,
+			required: true
+		},
+		status: {
+			type: String,
+			enum: ['INTERESTED', 'REMOVED']
 		}
 	},
 	{
@@ -24,7 +40,6 @@ export const TournamentsSchema = new mongoose.Schema(
 			transform(doc, returnObject) {
 				returnObject.id = returnObject._id
 				delete returnObject._id
-				delete returnObject.password
 				delete returnObject.__v
 			}
 		}

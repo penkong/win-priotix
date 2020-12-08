@@ -1,13 +1,18 @@
 // ---------------------- Packages ------------------------
 
 import mongoose from 'mongoose'
+import { EnumStatus } from '../../tournaments.service'
 
 // --------------------------------------------------------
 
 // input
 export interface ITournamentsInfo {
-	email: string
-	password: string
+	username: string
+	tournament_id: string
+	title: string
+	imageUrl: string
+	description: string
+	status?: EnumStatus
 }
 
 // add to this(model)
@@ -17,6 +22,10 @@ export interface ITournamentsModel extends mongoose.Model<ITournamentsDoc> {
 
 // output - return
 export interface ITournamentsDoc extends mongoose.Document {
-	email: string
-	password: string
+	username: string
+	tournament_id: string
+	title: string
+	imageUrl: string
+	description: string
+	status: EnumStatus
 }

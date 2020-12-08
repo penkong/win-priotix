@@ -5,7 +5,7 @@ import { ConfigModule } from '@nestjs/config'
 
 // ------------------------ Local ----------------------------------
 
-import { AuthModule, ProductsModule } from './api/v1'
+import { TournamentsModule, ProductsModule } from './api/v1'
 import { DatabaseModule } from './Database'
 
 import configuration from '../config/configuration'
@@ -16,7 +16,7 @@ import configuration from '../config/configuration'
 	imports: [
 		ConfigModule.forRoot({ load: [configuration], isGlobal: true }),
 		DatabaseModule,
-		AuthModule,
+		TournamentsModule,
 		ProductsModule
 	],
 
