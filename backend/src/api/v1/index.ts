@@ -1,2 +1,2 @@
-export * from './auth/auth.module';
-export * from './products/products.module';
+export * from './searchSession/tournaments.module'
+export * from './products/products.module'

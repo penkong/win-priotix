@@ -1,0 +1,25 @@
+// ---------------------- Packages ------------------------
+
+import { Test, TestingModule } from '@nestjs/testing'
+
+// ---------------------- Locals --------------------------
+
+import { TournamentsController } from '../tournaments.controller'
+
+// --------------------------------------------------------
+
+describe('AuthController Test', () => {
+	let controller: TournamentsController
+
+	beforeEach(async () => {
+		const module: TestingModule = await Test.createTestingModule({
+			controllers: [TournamentsController]
+		}).compile()
+
+		controller = module.get<TournamentsController>(TournamentsController)
+	})
+
+	it('should be defined', () => {
+		expect(controller).toBeDefined()
+	})
+})

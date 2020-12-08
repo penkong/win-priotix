@@ -1,4 +1,4 @@
 export const DATABASE_CONNECTION = 'DATABASE_CONNECTION'
 
-export const USER_MODEL = 'USER_MODEL'
-export const USER = 'User'
+export const TOURNAMENT_MODEL = 'TOURNAMENT_MODEL'
+export const TOURNAMENT = 'Tournament'
