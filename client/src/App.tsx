@@ -9,12 +9,10 @@ import { Landing } from './pages'
 
 // -----------------------------------------------------------------
 
-export default ({ history }: any) => {
+export const App = () => {
 	return (
-		<Router history={history}>
-			<Switch>
-				<Route exact path="/" component={Landing} />
-			</Switch>
-		</Router>
+		<Switch>
+			<Route exact path="/" component={Landing} />
+		</Switch>
 	)
 }

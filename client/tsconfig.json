@@ -1,28 +1,21 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
-		"declaration": true,
-		"removeComments": true,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"allowSyntheticDefaultImports": true,
 		"target": "es5",
-		"sourceMap": true,
-		"outDir": "./dist",
-		"baseUrl": "./",
-		"incremental": true,
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"skipLibCheck": true,
 		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
 		"strict": true,
+		"outDir": "./dist/",
 		"forceConsistentCasingInFileNames": true,
+		"module": "commonjs",
+		"removeComments": true,
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react",
-		"strictFunctionTypes": false
+		"jsx": "react"
 	},
 	"include": ["src"]
 }
