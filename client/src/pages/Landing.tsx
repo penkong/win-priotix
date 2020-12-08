@@ -1,13 +1,14 @@
 // ------------------------- Packages ------------------------------
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 // import { useDispatch, useSelector } from 'react-redux'
 
 // ------------------------ Local ----------------------------------
 
 // -----------------------------------------------------------------
 
-export interface IAppProps {}
+interface IAppProps {}
 
 // ---
 
@@ -17,8 +18,26 @@ const _Landing: React.FC<IAppProps> = () => {
 	// const menuConfigFromStore = useSelector(selectMenuConfig)
 
 	// const dispatch = useDispatch()
+	const [apiInfo, setApiInfo] = useState([])
 
-	useEffect(() => {}, [])
+	useEffect(() => {
+		fetcher()
+	}, [])
+
+	const fetcher = async (info: string = 'star') => {
+		try {
+			// ID
+			// Image
+			// Title
+			// Description
+			const res = await axios.get(
+				`https://api-search.win.gg/search?q=${info}&index=tournament`
+			)
+			console.log(res.data)
+		} catch (error) {
+			console.log(error)
+		}
+	}
 
 	// -------------------- Load jsx --------------------------
 

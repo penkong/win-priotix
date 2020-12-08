@@ -5,13 +5,14 @@ import { Switch, Route, Router } from 'react-router-dom'
 
 // ------------------------ Local ----------------------------------
 
-import { Landing } from './pages'
+import { Landing, Test } from './pages'
 
 // -----------------------------------------------------------------
 
 export const App = () => {
 	return (
 		<Switch>
+			<Route exact path="/test" component={Test} />
 			<Route exact path="/" component={Landing} />
 		</Switch>
 	)
