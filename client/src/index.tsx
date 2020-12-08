@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 // ------------------------ Local ----------------------------------
 
+import './style.scss'
 import { App } from './App'
 
 // -----------------------------------------------------------------

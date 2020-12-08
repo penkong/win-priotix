@@ -24,7 +24,7 @@ const _Landing: React.FC<IAppProps> = () => {
 
 	return (
 		<>
-			<div>hello from landing</div>
+			<div className="sh">hello from landing</div>
 		</>
 	)
 }
