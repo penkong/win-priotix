@@ -9,7 +9,7 @@ export class TournamentsResponseDto {
 	@ApiProperty()
 	@IsString()
 	@IsJWT()
-	Access_token: string
+	username: string
 
 	@ApiProperty()
 	@IsString()
