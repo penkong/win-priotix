@@ -9,21 +9,62 @@
 
 this powered by [Nest](https://github.com/nestjs/nest) and also can use it with spa and ssr application.
 
-#####
+##### Folder Structure :
 
-## and also offer you :
+backend
+client (webpack version)
+front-cra (create-react-app)
 
-##### MongoDB-Mongoose
+now before document and more about structure there are 2 things for us to know .
 
-##### Cookie-session
+###### first :
 
-##### Clean-Architecture
+because of geography , I need use vpn for fetching almost any kind of info from internet and with webpack 4 , 5 when use vpn or vpn in browser cause app not load up and it almost take 6 hours time of me to understand therefore for demonstration we use create-react-app but webpack version is fully functional and healthy but for rendering info i can't use that .
+webpack is buggy with postcss too , webpack almost take whole day one .
+also consider we can add many fancy things to webpack version for build production version .
+(and my main vpn does not work right now guess blocked by internet provider)
 
-##### Heavy Decoupling
+###### second:
 
----
+because of time consideration for me and company I did these steps untill now
 
-### Installation
+- api done (rest , nestjs , typescript , mongodb , mongoose , clean architecture and ...)
+- react app done . (react , redux , redux-saga , store , persistance , routing and ...)
+- back and front fully functional connected .
+- upcoming render info of in dropdown ( probably we are going to use Semantic UI or React-Select with sass and ... )
+
+Question:
+please let me know of this
+
+- do we need swagger?
+
+* do we need fully tested components for backend and front ?? (there are a lot files and full test need lots of time also consider some package like monog-dev-server for test need vpn )
+* please let me know about any edge case or other things you want to know .
+
+### NOW LET'S START :
+
+whole project fully written in typescript with my stlye of coding
+
+- Every folder has indexer - prevent code polution on imports .
+- Almost commented .
+- Negative sapcing in code .
+- Naming style of JAVA projects .
+- Type definitions .
+- Backend structure is ready to become microservice .
+- Each Domain in back provided by module .
+- Clean architecture .
+- Dockerfile . (I wanted to do more but must fix my problem with vpn for k8s and ...)
+- Main logic in front come from redux .
+- Decoupled frontend .
+- Reusability .
+- Frontend ready to use as micor-front with fancy thing like webpack federation module .
+- Best store design in front .
+- Api provide SPA , with small changes Ready to become SSR with something like nextjs or nuxtjs .
+- Prttier
+- Designed test style .
+- And lots ... (as I notice will add here :))
+
+### HOW USE ???
 
 if you have locally installed mongodb go next step otherwise
 
@@ -41,34 +82,62 @@ $ sudo docker run --name db -p 27017:27017 -d mongo
 
 ```
 
-after that :
+after that in each main folder, change to and :
 
 ```bash
 $ npm install
 ```
 
-### Running the app
+### for backend stand alone :
+
+change to directory
 
 ```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
+npm run start:dev
 
-# production mode
-$ npm run start:prod
 ```
 
-### Test
+### for client stand alnoe :
+
+change to directory
 
 ```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+npm run start
 
-# test coverage
-$ npm run test:cov
 ```
+
+### for front-cra stand alnoe :
+
+change to directory
+
+```bash
+
+npm run start
+
+```
+
+### fro backend + client together :
+
+change to backend directory
+
+```bash
+
+npm run dev
+
+```
+
+### fro backend + front-cra together (final project) :
+
+change to backend directory
+
+```bash
+
+npm run dev:cra
+
+```
+
+#### Please let me know about any questions you have - project still under development
+
+if you think it is enough please let me know .
