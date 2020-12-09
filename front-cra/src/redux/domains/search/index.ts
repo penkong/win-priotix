@@ -6,3 +6,5 @@ export * from './search.reducer'
 export * from './search.reselect'
 export * from './root.saga'
 export * from './search.enum'
+
+export * from './sagas/searchGetListStart.saga'

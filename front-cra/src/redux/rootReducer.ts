@@ -6,7 +6,11 @@ import storage from 'redux-persist/lib/storage'
 
 // ------------------------ Local ----------------------------------
 
-import { ISearchStateModel, searchReducer } from './domains/search'
+import {
+	ISearchStateModel,
+	searchReducer,
+	SearchActionsType
+} from './domains/search'
 
 // ------------------- App State Model ---------------------------------
 
@@ -24,9 +28,14 @@ const persistConfig = {
 
 // --------------------- Create rootReducer ---------------------------------
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers<
+	IApplicationStateModel,
+	SearchActionsType
+>({
 	search: searchReducer
 })
+
+export type RootState = ReturnType<typeof rootReducer>
 
 // ---------------------- Persisted Reducer --------------------------------
 

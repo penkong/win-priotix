@@ -2,17 +2,9 @@
 
 // ------------------------- Local ---------------------------------
 
-import { ISearchStateModel, SearchActionTypes, SearchActionsType } from '.'
+import { ISearchStateModel, EnumSearchAction, SearchActionsType } from '.'
 
 // ------------------------ Types ----------------------------------
-
-const {
-	SEARCH_LOADING_START,
-	SEARCH_GET_SUCCESS,
-	SEARCH_GET_FAILURE,
-	SEARCH_CHOOSE_SUCCESS,
-	SEARCH_CHOOSE_FAILURE
-} = SearchActionTypes
 
 //  ----------------------- Raw State -----------------------------
 
@@ -33,12 +25,12 @@ export const searchReducer = (
 	switch (action.type) {
 		// ---
 
-		case SEARCH_LOADING_START:
+		case EnumSearchAction.SEARCH_LOADING_START:
 			return { ...state, errorMessage: '', loading: true }
 
 		// ---
 
-		case SEARCH_GET_SUCCESS:
+		case EnumSearchAction.SEARCH_GET_SUCCESS:
 			return {
 				...state,
 				loading: false,
@@ -49,7 +41,7 @@ export const searchReducer = (
 
 		// ---
 
-		case SEARCH_GET_FAILURE:
+		case EnumSearchAction.SEARCH_GET_FAILURE:
 			return {
 				...state,
 				loading: false,
@@ -60,23 +52,26 @@ export const searchReducer = (
 
 		// ---
 
-		case SEARCH_CHOOSE_SUCCESS:
+		case EnumSearchAction.SEARCH_CHOOSE_START:
 			return {
 				...state,
 				loading: false,
-				selectedItem: state.selectedItem.push(action.payload as ISelectedItem)
+				errorMessage: '',
+				selecteItem: [...state.selectedItem, action.payload]
 			}
 
 		// ---
 
-		case SEARCH_CHOOSE_FAILURE:
+		case EnumSearchAction.SEARCH_CHOOSE_FAILURE:
 			return {
 				...state,
 				loading: false,
-				selectedItem: []
+				selectedItem: [...state.selectedItem],
+				errorMessage: action.payload
 			}
 
 		// ---
+
 		default:
 			return state
 	}

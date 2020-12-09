@@ -1,6 +1,7 @@
 // ------------------------- Packages ------------------------------
 
 import { all, fork } from 'redux-saga/effects'
+import { SearchGetListStartSaga } from '.'
 
 // ------------------------- Local ---------------------------------
 

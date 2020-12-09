@@ -7,8 +7,14 @@ import createSagaMiddleware from 'redux-saga'
 
 // ----------------------------------------------------------------
 
-import { persistedReducer } from './rootReducer'
+import {
+	IApplicationStateModel,
+	persistedReducer,
+	rootReducer,
+	RootState
+} from './rootReducer'
 import { rootSaga } from './rootSaga'
+import { SearchAction, SearchActionsType } from './domains/search'
 
 // ----------------------------------------------------------------
 
@@ -31,4 +37,6 @@ export const store = createStore(
 
 sagaMiddleware.run(rootSaga)
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(
+	store as any /*<RootState, SearchAction>*/
+)

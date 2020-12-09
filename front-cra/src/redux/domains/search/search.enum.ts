@@ -1,4 +1,4 @@
-export enum SearchActionTypes {
+export enum EnumSearchAction {
 	// ---------------- Loading ----------------
 
 	SEARCH_LOADING_START = 'SEARCH_LOADING_START',

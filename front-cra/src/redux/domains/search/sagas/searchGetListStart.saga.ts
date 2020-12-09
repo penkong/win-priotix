@@ -1,31 +1,36 @@
 // ------------------------- Packages ------------------------------
 
-import { put, takeLatest, select } from 'redux-saga/effects'
+import { put, takeLatest } from 'redux-saga/effects'
 
 // ------------------------- Local ---------------------------------
 
 import {
-	SearchActionTypes,
+	EnumSearchAction,
 	SearchService,
 	ISearchInfo,
 	SearchLoadingStartAction,
-	SearchGetStartActionType
+	SearchGetStartActionType,
+	SearchGetSuccessAction,
+	SearchGetFailureAction
 } from '..'
 
 // -----------------------------------------------------------------
 
-const { SEARCH_GET_START } = SearchActionTypes
+const { SEARCH_GET_START } = EnumSearchAction
 
 // ------------------------- Search --------------------------------
 
 export function* SearchGetListSaga({ payload }: SearchGetStartActionType) {
 	yield put(SearchLoadingStartAction())
-	const data: ISearchInfo = yield SearchService.searchWinGG(
+
+	const data: ISearchInfo[] = yield SearchService.searchWinGG(
 		payload
 	) as Promise<ISearchInfo>
-	// yield put(SalonsChooseFailureAction(data.error))
-	// yield put(AuthSignInSuccessAction(data))
-	// yield put(SalonsChooseSuccessAction(salonListWithSelected))
+
+	if (data[0].documents.length > 0) {
+		yield put(SearchGetSuccessAction(data))
+	}
+	yield put(SearchGetFailureAction())
 }
 
 // ------------------------- Main -----------------------------------
