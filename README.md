@@ -45,24 +45,26 @@ please let me know of this
 
 whole project fully written in typescript with my stlye of coding
 
-- Every folder has indexer - prevent code polution on imports .
-- Almost commented .
-- Negative sapcing in code .
-- Naming style of JAVA projects .
-- Type definitions .
-- Backend structure is ready to become microservice .
-- Each Domain in back provided by module .
-- Clean architecture .
-- Dockerfile . (I wanted to do more but must fix my problem with vpn for k8s and ...)
-- Main logic in front come from redux .
-- Decoupled frontend .
-- Reusability .
-- Frontend ready to use as micor-front with fancy thing like webpack federation module .
-- Best store design in front .
-- Api provide SPA , with small changes Ready to become SSR with something like nextjs or nuxtjs .
-- Prttier
-- Designed test style .
-- And lots ... (as I notice will add here :))
+- Git branching Not considered for now .
+
+* Every folder has indexer - prevent code polution on imports .
+* Almost commented .
+* Negative sapcing in code .
+* Naming style of JAVA projects .
+* Type definitions .
+* Backend structure is ready to become microservice .
+* Each Domain in back provided by module .
+* Clean architecture .
+* Dockerfile . (I wanted to do more but must fix my problem with vpn for k8s and ...)
+* Main logic in front come from redux .
+* Decoupled frontend .
+* Reusability .
+* Frontend ready to use as micor-front with fancy thing like webpack federation module .
+* Best store design in front .
+* Api provide SPA , with small changes Ready to become SSR with something like nextjs or nuxtjs .
+* Prttier
+* Designed test style .
+* And lots ... (as I notice will add here :))
 
 ### HOW USE ???
 
