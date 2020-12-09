@@ -18,10 +18,10 @@ const _Landing: React.FC<IAppProps> = () => {
 
 	return (
 		<Grid centered={true} style={{ marginTop: '1rem' }} stackable>
-			<Grid.Column width={6}>
+			<Grid.Column width={5}>
 				<DropdownSearch />
 			</Grid.Column>
-			<Grid.Column width={6}>
+			<Grid.Column width={7}>
 				<ItemKeeper />
 			</Grid.Column>
 		</Grid>

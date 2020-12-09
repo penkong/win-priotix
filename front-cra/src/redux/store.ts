@@ -7,14 +7,8 @@ import createSagaMiddleware from 'redux-saga'
 
 // ----------------------------------------------------------------
 
-import {
-	IApplicationStateModel,
-	persistedReducer,
-	rootReducer,
-	RootState
-} from './rootReducer'
+import { persistedReducer } from './rootReducer'
 import { rootSaga } from './rootSaga'
-import { SearchAction, SearchActionsType } from './domains/search'
 
 // ----------------------------------------------------------------
 

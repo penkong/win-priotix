@@ -1,66 +1,68 @@
 // ------------------------- Packages ------------------------------
 
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+
 import {
 	Dropdown,
 	DropdownItemProps,
 	DropdownOnSearchChangeData
 } from 'semantic-ui-react'
-import { itemSelector, SearchGetStartAction } from '../redux/domains/search'
-import { ISearchInfo } from '../redux/domains/search/search.interfaces'
-import { SearchChooseStartAction } from '../redux/domains/search/search.actions'
+
+import {
+	SearchChooseStartAction,
+	ISearchInfo,
+	itemSelector,
+	SearchGetStartAction
+} from '../redux/domains/search/'
 
 // ------------------------ Local ----------------------------------
 
 // -----------------------------------------------------------------
 
-const WAIT_INTERVAL = 1000
-
 const _DropdownSearch = () => {
-	// ---
-
-	const [options, setOptions] = useState<DropdownItemProps[]>([])
-
 	// ---
 
 	const items = useSelector(itemSelector)
 
 	// ---
 
-	useEffect(() => {
-		if (items) {
-			putItemsInDropDown(items)
-		}
-	}, [items])
+	useEffect(() => {}, [items])
 
 	// ---
 
 	const putItemsInDropDown = useCallback(
 		(items: ISearchInfo) => {
-			const searchedOptions: DropdownItemProps[] = []
-			items.documents.map((el) => {
-				searchedOptions.push({
-					key: el.id,
-					value: el.id,
-					text: el.title,
-					image: 'https://cdn-images.win.gg/' + el.images.square.filePath,
-					onClick: (
-						event: React.MouseEvent<HTMLDivElement>,
-						data: DropdownItemProps
-					) => {
-						dispatch(
-							SearchChooseStartAction({
-								tournament_id: el.id,
-								image: 'https://cdn-images.win.gg/' + el.images.square.filePath,
-								title: el.title,
-								description: el.description
-							})
-						)
-					}
+			const searchedOptions: DropdownItemProps[] = [
+				{ key: '', value: '', text: '', image: '' }
+			]
+
+			items &&
+				items.documents.forEach(({ id, title, images, description }) => {
+					const image =
+						`https://cdn-images.win.gg/${images.square.filePath}` || ''
+
+					searchedOptions.push({
+						key: id,
+						value: id,
+						text: title,
+						image,
+						onClick: (
+							event: React.MouseEvent<HTMLDivElement>,
+							data: DropdownItemProps
+						) => {
+							dispatch(
+								SearchChooseStartAction({
+									tournament_id: id,
+									image,
+									title,
+									description
+								})
+							)
+						}
+					})
 				})
-			})
-			setOptions(searchedOptions)
+			return searchedOptions
 		},
 		[items]
 	)
@@ -75,6 +77,7 @@ const _DropdownSearch = () => {
 		event: React.SyntheticEvent<HTMLElement>,
 		data: DropdownOnSearchChangeData
 	) => {
+		event.preventDefault()
 		if (data.searchQuery.length > 2) {
 			dispatch(SearchGetStartAction(data.searchQuery))
 		}
@@ -84,13 +87,12 @@ const _DropdownSearch = () => {
 
 	return (
 		<Dropdown
-			key={Math.random()}
 			placeholder="Select Country"
 			fluid
 			search
 			selection
 			onSearchChange={onSearchChange}
-			options={options}
+			options={(items && putItemsInDropDown(items)) || []}
 		/>
 	)
 }
