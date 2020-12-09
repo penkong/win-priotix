@@ -48,6 +48,7 @@ whole project fully written in typescript with my stlye of coding
 - Git branching Not considered for now .
 
 * Every folder has indexer - prevent code polution on imports .
+* Data save in Database flat mode (can use embeded document but we used flat style)
 * Almost commented .
 * Negative sapcing in code .
 * Naming style of JAVA projects .
