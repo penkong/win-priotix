@@ -1,5 +1,54 @@
-import React from 'react'
-import { Dropdown } from 'semantic-ui-react'
+// ------------------------- Packages ------------------------------
+
+import React, { useEffect } from 'react'
+import { AnyIfEmpty, useDispatch } from 'react-redux'
+import {
+	Dropdown,
+	DropdownItemProps,
+	DropdownOnSearchChangeData
+} from 'semantic-ui-react'
+import { SearchGetStartAction } from '../redux/domains/search'
+
+// ------------------------ Local ----------------------------------
+
+// -----------------------------------------------------------------
+
+const WAIT_INTERVAL = 1000
+
+const _DropdownSearch = () => {
+	// ---
+
+	useEffect(() => {}, [])
+
+	// ---
+
+	const dispatch = useDispatch()
+	const onSearchChange = (
+		event: React.SyntheticEvent<HTMLElement>,
+		data: DropdownOnSearchChangeData
+	) => {
+		if (data.searchQuery.length > 2) {
+			dispatch(SearchGetStartAction(data.searchQuery))
+		}
+	}
+
+	// ---
+
+	// ---
+
+	return (
+		<Dropdown
+			placeholder="Select Country"
+			fluid
+			search
+			selection
+			onSearchChange={onSearchChange}
+			options={countryOptions}
+		/>
+	)
+}
+
+export const DropdownSearch = _DropdownSearch
 
 const countryOptions = [
 	{
@@ -8,42 +57,11 @@ const countryOptions = [
 		image:
 			'https://cdn-images.win.gg/external/1/tournament/NDUyOQ/591077d5977f51d7a3bccbd4df6bc3bc/square/original.jpg',
 		text: 'Afghanistan',
-		onClick: (e: any, data: any) => {
-			console.log(data)
+		onClick: (
+			event: React.MouseEvent<HTMLDivElement>,
+			data: DropdownItemProps
+		) => {
+			console.log(data.active)
 		}
-	},
-	{ key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
-	{ key: 'al', value: 'al', flag: 'al', text: 'Albania' },
-	{ key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' },
-	{ key: 'as', value: 'as', flag: 'as', text: 'American Samoa' },
-	{ key: 'ad', value: 'ad', flag: 'ad', text: 'Andorra' },
-	{ key: 'ao', value: 'ao', flag: 'ao', text: 'Angola' },
-	{ key: 'ai', value: 'ai', flag: 'ai', text: 'Anguilla' },
-	{ key: 'ag', value: 'ag', flag: 'ag', text: 'Antigua' },
-	{ key: 'ar', value: 'ar', flag: 'ar', text: 'Argentina' },
-	{ key: 'am', value: 'am', flag: 'am', text: 'Armenia' },
-	{ key: 'aw', value: 'aw', flag: 'aw', text: 'Aruba' },
-	{ key: 'au', value: 'au', flag: 'au', text: 'Australia' },
-	{ key: 'at', value: 'at', flag: 'at', text: 'Austria' },
-	{ key: 'az', value: 'az', flag: 'az', text: 'Azerbaijan' },
-	{ key: 'bs', value: 'bs', flag: 'bs', text: 'Bahamas' },
-	{ key: 'bh', value: 'bh', flag: 'bh', text: 'Bahrain' },
-	{ key: 'bd', value: 'bd', flag: 'bd', text: 'Bangladesh' },
-	{ key: 'bb', value: 'bb', flag: 'bb', text: 'Barbados' },
-	{ key: 'by', value: 'by', flag: 'by', text: 'Belarus' },
-	{ key: 'be', value: 'be', flag: 'be', text: 'Belgium' },
-	{ key: 'bz', value: 'bz', flag: 'bz', text: 'Belize' },
-	{ key: 'bj', value: 'bj', flag: 'bj', text: 'Benin' }
+	}
 ]
-
-const _DropdownSearch = () => (
-	<Dropdown
-		placeholder="Select Country"
-		fluid
-		search
-		selection
-		options={countryOptions}
-	/>
-)
-
-export const DropdownSearch = _DropdownSearch

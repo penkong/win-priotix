@@ -1,7 +1,7 @@
 // ------------------------- Packages ------------------------------
 
 import React, { useEffect } from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
 // import axios from 'axios'
 // import { useDispatch, useSelector } from 'react-redux'
 
@@ -66,15 +66,13 @@ const _Landing: React.FC<IAppProps> = () => {
 	</div> */
 	}
 	return (
-		<Grid style={{ marginTop: '2rem' }}>
-			<Grid.Row>
-				<Grid.Column width={9}>
-					<DropdownSearch />
-				</Grid.Column>
-				<Grid.Column width={5}>
-					<DropdownSearch />
-				</Grid.Column>
-			</Grid.Row>
+		<Grid centered={true} style={{ marginTop: '1rem' }} stackable>
+			<Grid.Column width={6}>
+				<DropdownSearch />
+			</Grid.Column>
+			<Grid.Column width={6}>
+				<Segment size="massive">Content</Segment>
+			</Grid.Column>
 		</Grid>
 	)
 }
