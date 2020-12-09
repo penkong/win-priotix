@@ -23,7 +23,7 @@ export interface IApplicationStateModel {
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['search']
+	whitelist: []
 }
 
 // --------------------- Create rootReducer ---------------------------------

@@ -8,11 +8,14 @@ import { IApplicationStateModel } from '../../rootReducer'
 
 // -----------------------------------------------------------------
 
-const selectedImtes = (state: IApplicationStateModel) =>
-	state.search.selectedItem
+const searchedItemSelector = (state: IApplicationStateModel) =>
+	state.search.searchInfo
 
 // -----------------------------------------------------------------
 
-export const selectSalonsArray = createSelector([selectedImtes], (info) => info)
+export const itemSelector = createSelector(
+	[searchedItemSelector],
+	(info) => info[0]
+)
 
 // -----------------------------------------------------------------

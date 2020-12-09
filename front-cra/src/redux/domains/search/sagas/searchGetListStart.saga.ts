@@ -23,17 +23,16 @@ const { SEARCH_GET_START } = EnumSearchAction
 export function* SearchGetListSaga({ payload }: SearchGetStartActionType) {
 	yield put(SearchLoadingStartAction())
 	try {
-		console.log(payload)
 		const data: ISearchInfo[] = yield SearchService.searchWinGG(
 			payload
 		) as Promise<ISearchInfo>
-		console.log(data)
 
 		if (data[0].documents.length > 0) {
 			yield put(SearchGetSuccessAction(data))
 		}
 	} catch (error) {
-		yield put(SearchGetFailureAction(error.reponse.message))
+		console.log(error.response)
+		yield put(SearchGetFailureAction(error.reponse))
 	}
 }
 
