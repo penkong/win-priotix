@@ -146,3 +146,5 @@ npm run dev:cra
 also because UI and UX is another thing for consideration I use UI kit components and
 place of items for future .
 if you think it is enough please let me know .
+
+update: from functionality point of view everything is fine but need a lot UI stuff to add.
