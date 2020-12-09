@@ -13,9 +13,10 @@ export const TournamentsSchema = new mongoose.Schema(
 			type: String,
 			required: true
 		},
-		tournamnet_id: {
+		tournament_id: {
 			type: String,
-			required: true
+			required: true,
+			unique: true
 		},
 		title: {
 			type: String,
@@ -41,6 +42,7 @@ export const TournamentsSchema = new mongoose.Schema(
 				returnObject.id = returnObject._id
 				delete returnObject._id
 				delete returnObject.__v
+				delete returnObject.status
 			}
 		}
 	}

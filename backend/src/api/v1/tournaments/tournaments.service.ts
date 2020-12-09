@@ -51,8 +51,7 @@ export class TournamentsService {
 	public async addTournoments(
 		tournamentsDTO: TournamentsDto
 	): Promise<TournamentsDto> {
-		const { username } = tournamentsDTO
-
+		const { username, tournament_id } = tournamentsDTO
 		// check length
 		const lengthOfTournaments = (
 			await this.tournamentModel.find({
@@ -70,6 +69,21 @@ export class TournamentsService {
 				},
 				HttpStatus.FORBIDDEN
 			)
+
+		// check maybe before removed
+		const existItem = await this.tournamentModel.findOne({
+			tournament_id
+		})
+
+		// if it removed make it available
+		if (existItem && existItem.status === EnumStatus.REMOVED) {
+			existItem.status = EnumStatus.INTERESTED
+			return existItem
+		}
+		// if exist return it .
+		if (existItem && existItem.status === EnumStatus.INTERESTED) {
+			return existItem
+		}
 
 		// make new one
 		const newTournament = new this.tournamentModel(tournamentsDTO)
@@ -128,17 +142,17 @@ export class TournamentsService {
 
 	public async getOne(id: string, username: string): Promise<TournamentsDto> {
 		// try to find
-		const validTournamnet = await this.tournamentModel.findOne({
+		const validTournament = await this.tournamentModel.findOne({
 			_id: id,
 			username,
 			status: EnumStatus.INTERESTED
 		})
 
 		// if not exist
-		if (!validTournamnet) throw new NotFoundException()
+		if (!validTournament) throw new NotFoundException()
 
 		// return one
-		return validTournamnet
+		return validTournament
 	}
 }
 
