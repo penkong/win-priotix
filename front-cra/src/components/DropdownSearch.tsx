@@ -3,8 +3,8 @@ import { Dropdown } from 'semantic-ui-react'
 
 const countryOptions = [
 	{
-		key: 'af',
-		value: 'af',
+		key: 'key come here',
+		value: 'LCS',
 		image:
 			'https://cdn-images.win.gg/external/1/tournament/NDUyOQ/591077d5977f51d7a3bccbd4df6bc3bc/square/original.jpg',
 		text: 'Afghanistan',
