@@ -13,7 +13,7 @@ export interface ISearchInfo {
 }
 
 export interface ISelectedItem {
-	id: string
+	id?: string
 	tournament_id: string
 	image: string
 	title: string

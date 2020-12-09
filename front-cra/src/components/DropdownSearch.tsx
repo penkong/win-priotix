@@ -1,6 +1,6 @@
 // ------------------------- Packages ------------------------------
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
 	Dropdown,
@@ -9,6 +9,7 @@ import {
 } from 'semantic-ui-react'
 import { itemSelector, SearchGetStartAction } from '../redux/domains/search'
 import { ISearchInfo } from '../redux/domains/search/search.interfaces'
+import { SearchChooseStartAction } from '../redux/domains/search/search.actions'
 
 // ------------------------ Local ----------------------------------
 
@@ -35,24 +36,34 @@ const _DropdownSearch = () => {
 
 	// ---
 
-	const putItemsInDropDown = (items: ISearchInfo) => {
-		const searchedOptions: DropdownItemProps[] = []
-		items.documents.map((el) => {
-			searchedOptions.push({
-				key: el.id,
-				value: el.short_title,
-				text: el.title,
-				image: 'https://cdn-images.win.gg/' + el.images.square.filePath,
-				onClick: (
-					event: React.MouseEvent<HTMLDivElement>,
-					data: DropdownItemProps
-				) => {
-					return data.selected
-				}
+	const putItemsInDropDown = useCallback(
+		(items: ISearchInfo) => {
+			const searchedOptions: DropdownItemProps[] = []
+			items.documents.map((el) => {
+				searchedOptions.push({
+					key: el.id,
+					value: el.id,
+					text: el.title,
+					image: 'https://cdn-images.win.gg/' + el.images.square.filePath,
+					onClick: (
+						event: React.MouseEvent<HTMLDivElement>,
+						data: DropdownItemProps
+					) => {
+						dispatch(
+							SearchChooseStartAction({
+								tournament_id: el.id,
+								image: 'https://cdn-images.win.gg/' + el.images.square.filePath,
+								title: el.title,
+								description: el.description
+							})
+						)
+					}
+				})
 			})
-		})
-		setOptions(searchedOptions)
-	}
+			setOptions(searchedOptions)
+		},
+		[items]
+	)
 
 	// ---
 
@@ -73,6 +84,7 @@ const _DropdownSearch = () => {
 
 	return (
 		<Dropdown
+			key={Math.random()}
 			placeholder="Select Country"
 			fluid
 			search
@@ -84,19 +96,3 @@ const _DropdownSearch = () => {
 }
 
 export const DropdownSearch = _DropdownSearch
-
-// const countryOptions = [
-// 	{
-// 		key: 'key come here',
-// 		value: 'LCS',
-// 		image:
-// 			'https://cdn-images.win.gg/external/1/tournament/NDUyOQ/591077d5977f51d7a3bccbd4df6bc3bc/square/original.jpg',
-// 		text: 'Afghanistan',
-// 		onClick: (
-// 			event: React.MouseEvent<HTMLDivElement>,
-// 			data: DropdownItemProps
-// 		) => {
-// 			console.log(data.active)
-// 		}
-// 	}
-// ]

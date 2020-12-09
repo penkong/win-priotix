@@ -57,7 +57,12 @@ export const searchReducer = (
 				...state,
 				loading: false,
 				errorMessage: '',
-				selecteItem: [...state.selectedItem, action.payload]
+				selectedItem: [
+					...state.selectedItem.filter(
+						(el) => el.tournament_id !== action.payload.tournament_id
+					),
+					action.payload
+				]
 			}
 
 		// ---

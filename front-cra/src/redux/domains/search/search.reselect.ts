@@ -19,3 +19,10 @@ export const itemSelector = createSelector(
 )
 
 // -----------------------------------------------------------------
+
+const contentItems = (state: IApplicationStateModel) =>
+	state.search.selectedItem
+
+// -----------------------------------------------------------------
+
+export const contentSelector = createSelector([contentItems], (info) => info)
