@@ -1,0 +1,490 @@
+[
+	{
+		"maxScore": 12.371001,
+		"category": "tournament",
+		"documents": [
+			{
+				"score": 12.371001,
+				"products": [1, 3, 5],
+				"id": "NDUyOQ",
+				"title": "2020 LoL Championship Series Summer",
+				"short_title": "LCS",
+				"description": "The League of Legends Championship Series is the premier circuit in North America.",
+				"game_id": "2",
+				"images": {
+					"default": {
+						"filePath": "external/1/tournament/NDUyOQ/f8b5ca618d84842a4b93f34caa78e22f/default/original.jpg"
+					},
+					"banner": {
+						"filePath": "external/1/tournament/NDUyOQ/66ee06b07ebfd849bf251506ee1a5a01/banner/original.jpg"
+					},
+					"square": {
+						"filePath": "external/1/tournament/NDUyOQ/591077d5977f51d7a3bccbd4df6bc3bc/square/original.jpg"
+					}
+				},
+				"tier": 1,
+				"country_name": "United States",
+				"city": null,
+				"slug": "lcs",
+				"start": "2020-06-12T00:00:00.000Z",
+				"end": "2020-09-07T00:00:00.000Z",
+				"prizepool": {
+					"first": { "value": "TBA", "currency": null },
+					"second": { "value": "TBA", "currency": null },
+					"third": { "value": "TBA", "currency": null },
+					"total": { "value": "TBA", "currency": null }
+				},
+				"teams": [
+					{
+						"id": "MjUyNw",
+						"slug": "tl",
+						"short_name": "TL",
+						"images": {
+							"default": {
+								"filePath": "teams/ba3e9b6a519cfddc560b5d53210df1bd/4aae3183c797301a760505491bdf7b97/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team Liquid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1634.22341847734,
+							"sigma": 43.5806870617608,
+							"rating": 1503.48135729206
+						}
+					},
+					{
+						"id": "MzE2",
+						"slug": "c9",
+						"short_name": "C9",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/MzE2/4871687527b080fc22420d9c5bccd0da/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Cloud9",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1621.89807177918,
+							"sigma": 47.5435346093989,
+							"rating": 1479.26746795098
+						}
+					},
+					{
+						"id": "Mzg0",
+						"slug": "tsm",
+						"short_name": "TSM",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/Mzg0/dac866a10adaba10745f75ad2ac91789/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team SoloMid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1580.3024677762,
+							"sigma": 47.3551969782423,
+							"rating": 1438.23687684148
+						}
+					}
+				],
+				"source": "abios"
+			},
+			{
+				"score": 12.130707,
+				"products": [1, 3, 5],
+				"id": "NDI0NQ",
+				"title": "2020 LoL Championship Series Spring",
+				"short_title": "LCS",
+				"description": "The League of Legends Championship Series is the premier circuit in North America.",
+				"game_id": "2",
+				"alias": "LCS 2020",
+				"images": {
+					"default": {
+						"filePath": "external/1/tournament/NDI0NQ/f8b5ca618d84842a4b93f34caa78e22f/default/original.jpg"
+					},
+					"banner": {
+						"filePath": "external/1/tournament/NDI0NQ/66ee06b07ebfd849bf251506ee1a5a01/banner/original.jpg"
+					},
+					"square": {
+						"filePath": "external/1/tournament/NDI0NQ/591077d5977f51d7a3bccbd4df6bc3bc/square/original.jpg"
+					}
+				},
+				"tier": 1,
+				"country_name": "United States",
+				"city": "Los Angeles",
+				"slug": "lcs",
+				"start": "2020-01-24T17:26:00.000Z",
+				"end": "2020-03-29T16:26:00.000Z",
+				"prizepool": {
+					"first": { "value": "TBD", "currency": null },
+					"second": { "value": "TBD", "currency": null },
+					"third": { "value": "TBD", "currency": null },
+					"total": { "value": "TBD", "currency": null }
+				},
+				"teams": [
+					{
+						"id": "MjUyNw",
+						"slug": "tl",
+						"short_name": "TL",
+						"images": {
+							"default": {
+								"filePath": "teams/ba3e9b6a519cfddc560b5d53210df1bd/4aae3183c797301a760505491bdf7b97/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team Liquid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1634.22341847734,
+							"sigma": 43.5806870617608,
+							"rating": 1503.48135729206
+						}
+					},
+					{
+						"id": "MzE2",
+						"slug": "c9",
+						"short_name": "C9",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/MzE2/4871687527b080fc22420d9c5bccd0da/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Cloud9",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1621.89807177918,
+							"sigma": 47.5435346093989,
+							"rating": 1479.26746795098
+						}
+					},
+					{
+						"id": "Mzg0",
+						"slug": "tsm",
+						"short_name": "TSM",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/Mzg0/dac866a10adaba10745f75ad2ac91789/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team SoloMid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1580.3024677762,
+							"sigma": 47.3551969782423,
+							"rating": 1438.23687684148
+						}
+					}
+				],
+				"source": "abios"
+			},
+			{
+				"score": 12.130707,
+				"products": [1, 3, 5],
+				"id": "Mzc4NQ",
+				"title": "2019 LoL Championship Series Summer",
+				"short_title": "LCS",
+				"description": "The League of Legends Championship Series is the premier circuit in North America, hosting some of the most recognized brands within western",
+				"game_id": "2",
+				"images": {
+					"default": {
+						"filePath": "external/1/tournament/Mzc4NQ/97bc1513cb2b124a32226e39ff06ba2f/default/original.jpg"
+					},
+					"banner": {
+						"filePath": "external/1/tournament/Mzc4NQ/9f3e47755035bd2ef258c176d87e2d1a/banner/original.jpg"
+					},
+					"square": {
+						"filePath": "external/1/tournament/Mzc4NQ/9d3dad9d7f7f3860b05a750491d7f366/square/original.jpg"
+					}
+				},
+				"tier": 1,
+				"country_name": "United States",
+				"city": "Los Angeles, CA",
+				"slug": "lcs",
+				"start": "2019-06-01T00:00:00.000Z",
+				"end": "2019-09-08T00:00:00.000Z",
+				"prizepool": {
+					"first": {
+						"value": "100000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"second": {
+						"value": "50000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"third": {
+						"value": "25000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"total": {
+						"value": "200000",
+						"currency": { "symbol": "$", "name": "USD" }
+					}
+				},
+				"teams": [
+					{
+						"id": "MjUyNw",
+						"slug": "tl",
+						"short_name": "TL",
+						"images": {
+							"default": {
+								"filePath": "teams/ba3e9b6a519cfddc560b5d53210df1bd/4aae3183c797301a760505491bdf7b97/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team Liquid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1634.22341847734,
+							"sigma": 43.5806870617608,
+							"rating": 1503.48135729206
+						}
+					},
+					{
+						"id": "MzE2",
+						"slug": "c9",
+						"short_name": "C9",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/MzE2/4871687527b080fc22420d9c5bccd0da/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Cloud9",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1621.89807177918,
+							"sigma": 47.5435346093989,
+							"rating": 1479.26746795098
+						}
+					},
+					{
+						"id": "Mzg0",
+						"slug": "tsm",
+						"short_name": "TSM",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/Mzg0/dac866a10adaba10745f75ad2ac91789/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team SoloMid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1580.3024677762,
+							"sigma": 47.3551969782423,
+							"rating": 1438.23687684148
+						}
+					}
+				],
+				"source": "abios"
+			},
+			{
+				"score": 12.130707,
+				"products": [1, 3, 5],
+				"id": "MzU0Mg",
+				"title": "2019 LoL Championship Series Spring",
+				"short_title": "LCS",
+				"description": "The League of Legends Championship Series is the premier circuit in North America.",
+				"game_id": "2",
+				"images": {
+					"default": {
+						"filePath": "external/1/tournament/MzU0Mg/5a1525f6031b676c6281318c40bcde30/default/original.jpg"
+					},
+					"banner": {
+						"filePath": "external/1/tournament/MzU0Mg/b58f73ee4790210f85e53d473c436808/banner/original.jpg"
+					},
+					"square": {
+						"filePath": "external/1/tournament/MzU0Mg/dd99e56421d7aa72cc20f56728336c5f/square/original.jpg"
+					}
+				},
+				"tier": 1,
+				"country_name": "United States",
+				"city": "Los Angeles",
+				"slug": "lcs",
+				"start": "2019-01-26T00:00:00.000Z",
+				"end": "2019-04-14T00:00:00.000Z",
+				"prizepool": {
+					"first": {
+						"value": "100000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"second": {
+						"value": "50000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"third": {
+						"value": "30000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"total": {
+						"value": "200000",
+						"currency": { "symbol": "$", "name": "USD" }
+					}
+				},
+				"teams": [
+					{
+						"id": "MjUyNw",
+						"slug": "tl",
+						"short_name": "TL",
+						"images": {
+							"default": {
+								"filePath": "teams/ba3e9b6a519cfddc560b5d53210df1bd/4aae3183c797301a760505491bdf7b97/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team Liquid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1634.22341847734,
+							"sigma": 43.5806870617608,
+							"rating": 1503.48135729206
+						}
+					},
+					{
+						"id": "MzE2",
+						"slug": "c9",
+						"short_name": "C9",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/MzE2/4871687527b080fc22420d9c5bccd0da/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Cloud9",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1621.89807177918,
+							"sigma": 47.5435346093989,
+							"rating": 1479.26746795098
+						}
+					},
+					{
+						"id": "Mzg0",
+						"slug": "tsm",
+						"short_name": "TSM",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/Mzg0/dac866a10adaba10745f75ad2ac91789/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team SoloMid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1580.3024677762,
+							"sigma": 47.3551969782423,
+							"rating": 1438.23687684148
+						}
+					}
+				],
+				"source": "abios"
+			},
+			{
+				"score": 7.548222,
+				"products": [1, 3, 5],
+				"id": "Mjk4MA",
+				"title": "2018 North American LoL Championship Series Summer",
+				"short_title": "NA LCS",
+				"description": "The Summer Season of the 2018 NA LCS Season, featuring some of the biggest names in western esports.",
+				"game_id": "2",
+				"images": {
+					"default": {
+						"filePath": "external/1/tournament/Mjk4MA/3479118390251d6c0f5163e638211528/default/original.jpg"
+					},
+					"banner": {
+						"filePath": "external/1/tournament/Mjk4MA/41a0edd7d2410361140dec37694ad317/banner/original.jpg"
+					},
+					"square": {
+						"filePath": "external/1/tournament/Mjk4MA/b5dfd383a4b6c73064dc43e6b8e2cb81/square/original.jpg"
+					}
+				},
+				"tier": 1,
+				"country_name": "North America",
+				"city": "California",
+				"slug": "na-lcs",
+				"start": "2018-06-16T00:00:00.000Z",
+				"end": "2018-09-17T00:00:00.000Z",
+				"prizepool": {
+					"first": {
+						"value": "50000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"second": {
+						"value": "25000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"third": {
+						"value": "15000",
+						"currency": { "symbol": "$", "name": "USD" }
+					},
+					"total": {
+						"value": "100000",
+						"currency": { "symbol": "$", "name": "USD" }
+					}
+				},
+				"teams": [
+					{
+						"id": "MjUyNw",
+						"slug": "tl",
+						"short_name": "TL",
+						"images": {
+							"default": {
+								"filePath": "teams/ba3e9b6a519cfddc560b5d53210df1bd/4aae3183c797301a760505491bdf7b97/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team Liquid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1634.22341847734,
+							"sigma": 43.5806870617608,
+							"rating": 1503.48135729206
+						}
+					},
+					{
+						"id": "MzE2",
+						"slug": "c9",
+						"short_name": "C9",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/MzE2/4871687527b080fc22420d9c5bccd0da/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Cloud9",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1621.89807177918,
+							"sigma": 47.5435346093989,
+							"rating": 1479.26746795098
+						}
+					},
+					{
+						"id": "Mzg0",
+						"slug": "tsm",
+						"short_name": "TSM",
+						"images": {
+							"default": {
+								"filePath": "external/1/team/Mzg0/dac866a10adaba10745f75ad2ac91789/default/original.png"
+							}
+						},
+						"ranking": {
+							"nick_name": "Team SoloMid",
+							"starting_mu": 1500,
+							"starting_sigma": 100,
+							"mu": 1580.3024677762,
+							"sigma": 47.3551969782423,
+							"rating": 1438.23687684148
+						}
+					}
+				],
+				"source": "abios"
+			}
+		]
+	}
+]

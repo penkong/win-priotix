@@ -1,7 +1,7 @@
 // ------------------------- Packages ------------------------------
 
 import React from 'react'
-import { Switch, Route, Router } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 // ------------------------ Local ----------------------------------
 
@@ -9,7 +9,11 @@ import { Landing, Test } from './pages'
 
 // -----------------------------------------------------------------
 
-export const App = () => {
+interface IAppProps {}
+
+// -----------------------------------------------------------------
+
+export const App: React.FC<IAppProps> = () => {
 	return (
 		<Switch>
 			<Route exact path="/test" component={Test} />

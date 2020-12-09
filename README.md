@@ -9,18 +9,7 @@
 
 this powered by [Nest](https://github.com/nestjs/nest) and also can use it with spa and ssr application.
 
-##### for ssr with nextjs or nuxtjs :
-
-create server directory in root of your app
-copy dependencies and devDep into package.json of next or nuxt.
-copy src, test , config into server directory.
-(other files must provide in root of your app - next or nuxt)
-npm install
-
-##### for spa with cra or vite or vue-cli :
-
-coming soon , already written , must add it to project for refer.
-be patience.
+#####
 
 ## and also offer you :
 
