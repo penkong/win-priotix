@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 // ------------------------ Local ----------------------------------
 
+import 'semantic-ui-css/semantic.min.css'
 import { store, persistor } from './redux/'
 import { App } from './App'
 

@@ -76,7 +76,7 @@ const _Landing: React.FC<IAppProps> = () => {
 		// 		</Grid.Column>
 		// 	</Grid.Row>
 		// </Grid>
-		<div>hellow</div>
+		<DropdownSearch />
 	)
 }
 
