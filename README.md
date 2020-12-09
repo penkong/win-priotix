@@ -22,7 +22,7 @@ now before document and more about structure there are 2 things for us to know .
 because of geography , I need use vpn for fetching almost any kind of info from internet and with webpack 4 , 5 when use vpn or vpn in browser cause app not load up and it almost take 6 hours time of me to understand therefore for demonstration we use create-react-app but webpack version is fully functional and healthy but for rendering info i can't use that .
 webpack is buggy with postcss too , webpack almost take whole day one .
 also consider we can add many fancy things to webpack version for build production version .
-(and my main vpn does not work right now guess blocked by internet provider)
+(and my main vpn does not work now guess blocked by internet provider)
 
 ###### second:
 
@@ -140,4 +140,6 @@ npm run dev:cra
 
 #### Please let me know about any questions you have - project still under development
 
+also because UI and UX is another thing for consideration I use UI kit components and
+place of items for future .
 if you think it is enough please let me know .
