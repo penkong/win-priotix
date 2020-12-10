@@ -15,8 +15,8 @@ const _ItemKeeper = () => {
 
 	const renderContents = (content: any) =>
 		content.map(({ image, tournament_id, description, title }: any) => (
-			<Item.Group divided key={tournament_id + Math.random()}>
-				<Item key={tournament_id}>
+			<Item.Group divided key={title + Math.random()}>
+				<Item>
 					<Item.Image src={image} />
 					<Item.Content>
 						<Item.Header as="a">{title}</Item.Header>

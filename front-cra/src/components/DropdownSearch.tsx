@@ -101,7 +101,7 @@ const _DropdownSearch = () => {
 			selection
 			selectOnBlur
 			onSearchChange={onSearchChange}
-			options={items && putItemsInDropDown(items)}
+			options={(items && putItemsInDropDown(items)) || []}
 			onChange={onChange}
 		/>
 	)

@@ -63,7 +63,7 @@ export const searchReducer = (
 				errorMessage: '',
 				selectedItem: [
 					...state.selectedItem.filter(
-						(el) => el.tournament_id !== action.payload.tournament_id
+						(el) => el.title !== action.payload.title
 					),
 					action.payload
 				]
