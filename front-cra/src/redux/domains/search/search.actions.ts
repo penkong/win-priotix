@@ -4,7 +4,7 @@
 
 import { ISearchInfo, ISelectedItem, EnumSearchAction } from '.'
 
-// ------------------------- Loading Action ---------------------------------
+// ------------------------- Username Action ---------------------------------
 
 export interface SetUserNameStartActionType {
 	type: EnumSearchAction.SET_USERNAME

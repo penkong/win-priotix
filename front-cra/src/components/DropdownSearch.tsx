@@ -5,18 +5,19 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import {
 	Dropdown,
-	DropdownItemProps,
+	DropdownProps,
 	DropdownOnSearchChangeData
 } from 'semantic-ui-react'
+
+// ------------------------ Local ----------------------------------
 
 import {
 	SearchChooseStartAction,
 	ISearchInfo,
 	itemSelector,
-	SearchGetStartAction
+	SearchGetStartAction,
+	ISelectedItem
 } from '../redux/domains/search/'
-
-// ------------------------ Local ----------------------------------
 
 // -----------------------------------------------------------------
 
@@ -33,34 +34,20 @@ const _DropdownSearch = () => {
 
 	const putItemsInDropDown = useCallback(
 		(items: ISearchInfo) => {
-			const searchedOptions: DropdownItemProps[] = [
-				{ key: '', value: '', text: '', image: '' }
-			]
+			const searchedOptions = [{ key: '', value: '', text: '', image: '' }]
 
 			items &&
 				items.documents.forEach(({ id, title, images, description }) => {
-					const image =
-						`https://cdn-images.win.gg/${images.square.filePath}` || ''
-
-					searchedOptions.push({
-						key: id,
-						value: id,
-						text: title,
-						image,
-						onClick: (
-							event: React.MouseEvent<HTMLDivElement>,
-							data: DropdownItemProps
-						) => {
-							dispatch(
-								SearchChooseStartAction({
-									tournament_id: id,
-									image,
-									title,
-									description
-								})
-							)
-						}
-					})
+					if (images.square.filePath) {
+						const image =
+							`https://cdn-images.win.gg/${images.square.filePath || ''}` || ''
+						searchedOptions.push({
+							key: id,
+							value: id,
+							text: title,
+							image
+						})
+					}
 				})
 			return searchedOptions
 		},
@@ -79,7 +66,28 @@ const _DropdownSearch = () => {
 	) => {
 		event.preventDefault()
 		if (data.searchQuery.length > 2) {
+			event.preventDefault()
 			dispatch(SearchGetStartAction(data.searchQuery))
+		}
+	}
+
+	// ---
+
+	const onChange = (
+		event: React.SyntheticEvent<HTMLElement, Event>,
+		data: DropdownProps
+	) => {
+		if (data.options) {
+			const selected = data.options.filter((el) => el.key === data.value)
+			const info = {
+				tournament_id: selected[0].id,
+				image: selected[0].image,
+				title: selected[0].text,
+				description: selected[0].description
+			}
+			if (selected) {
+				dispatch(SearchChooseStartAction(info as ISelectedItem))
+			}
 		}
 	}
 
@@ -87,12 +95,14 @@ const _DropdownSearch = () => {
 
 	return (
 		<Dropdown
-			placeholder="Select Country"
+			placeholder="Select Tournament"
 			fluid
 			search
 			selection
+			selectOnBlur
 			onSearchChange={onSearchChange}
-			options={(items && putItemsInDropDown(items)) || []}
+			options={items && putItemsInDropDown(items)}
+			onChange={onChange}
 		/>
 	)
 }

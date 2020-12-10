@@ -32,10 +32,10 @@ const _Search: React.FC<IAppProps> = () => {
 
 	return (
 		<Grid centered={true} style={{ marginTop: '1rem' }} stackable>
-			<Grid.Column width={5}>
+			<Grid.Column width={7}>
 				<DropdownSearch />
 			</Grid.Column>
-			<Grid.Column width={7}>
+			<Grid.Column width={6}>
 				<ItemKeeper />
 			</Grid.Column>
 		</Grid>
