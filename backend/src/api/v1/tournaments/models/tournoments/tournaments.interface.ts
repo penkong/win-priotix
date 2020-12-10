@@ -10,8 +10,8 @@ export interface ITournamentsInfo {
 	username: string
 	tournament_id: string
 	title: string
-	imageUrl: string
-	description: string
+	image: string
+	description?: string
 	status?: EnumStatus
 }
 
@@ -25,7 +25,7 @@ export interface ITournamentsDoc extends mongoose.Document {
 	username: string
 	tournament_id: string
 	title: string
-	imageUrl: string
-	description: string
-	status: EnumStatus
+	image: string
+	description?: string
+	status?: EnumStatus
 }

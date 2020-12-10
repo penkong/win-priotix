@@ -2,6 +2,7 @@
 
 import React, { useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import axios from 'axios'
 
 import {
 	Dropdown,
@@ -16,15 +17,27 @@ import {
 	ISearchInfo,
 	itemSelector,
 	SearchGetStartAction,
-	ISelectedItem
+	ISelectedItem,
+	userNameSelector
 } from '../redux/domains/search/'
 
 // -----------------------------------------------------------------
+
+interface ITournamentsDto {
+	username: string
+	tournament_id: string
+	title: string
+	image: string
+	description?: string
+}
+
+// ---
 
 const _DropdownSearch = () => {
 	// ---
 
 	const items = useSelector(itemSelector)
+	const username = useSelector(userNameSelector)
 
 	// ---
 
@@ -36,9 +49,9 @@ const _DropdownSearch = () => {
 		(items: ISearchInfo) => {
 			const searchedOptions = [{ key: '', value: '', text: '', image: '' }]
 
-			items &&
+			if (items) {
 				items.documents.forEach(({ id, title, images, description }) => {
-					if (images.square.filePath) {
+					if (images) {
 						const image =
 							`https://cdn-images.win.gg/${images.square.filePath || ''}` || ''
 						searchedOptions.push({
@@ -49,6 +62,7 @@ const _DropdownSearch = () => {
 						})
 					}
 				})
+			}
 			return searchedOptions
 		},
 		[items]
@@ -73,20 +87,38 @@ const _DropdownSearch = () => {
 
 	// ---
 
-	const onChange = (
+	const onChange = async (
 		event: React.SyntheticEvent<HTMLElement, Event>,
 		data: DropdownProps
 	) => {
 		if (data.options) {
 			const selected = data.options.filter((el) => el.key === data.value)
 			const info = {
-				tournament_id: selected[0].id,
-				image: selected[0].image,
-				title: selected[0].text,
-				description: selected[0].description
+				tournament_id: selected[0].key.toString(),
+				image: selected[0].image?.toString()!,
+				title: selected[0].text?.toString()!,
+				description: selected[0].description?.toString()! || ''
 			}
 			if (selected) {
-				dispatch(SearchChooseStartAction(info as ISelectedItem))
+				try {
+					const body = {
+						username,
+						tournament_id: info.tournament_id,
+						title: info.title,
+						image: info.image,
+						description: info.description
+					}
+					console.log(body)
+					const { data } = await axios.post(
+						'http://localhost:3001/api/v1/tournaments',
+						body
+					)
+					if (data) {
+						dispatch(SearchChooseStartAction(info as ISelectedItem))
+					}
+				} catch (error) {
+					console.log(error)
+				}
 			}
 		}
 	}

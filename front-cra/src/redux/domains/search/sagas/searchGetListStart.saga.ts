@@ -1,6 +1,6 @@
 // ------------------------- Packages ------------------------------
 
-import { put, takeLatest } from 'redux-saga/effects'
+import { put, select, takeLatest } from 'redux-saga/effects'
 
 // ------------------------- Local ---------------------------------
 
@@ -13,6 +13,7 @@ import {
 	SearchGetSuccessAction,
 	SearchGetFailureAction
 } from '..'
+import { IApplicationStateModel } from '../../../rootReducer'
 
 // -----------------------------------------------------------------
 

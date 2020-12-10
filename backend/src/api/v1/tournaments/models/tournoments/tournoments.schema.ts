@@ -22,13 +22,12 @@ export const TournamentsSchema = new mongoose.Schema(
 			type: String,
 			required: true
 		},
-		imageUrl: {
+		image: {
 			type: String,
 			required: true
 		},
 		description: {
-			type: String,
-			required: true
+			type: String
 		},
 		status: {
 			type: String,

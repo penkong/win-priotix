@@ -18,10 +18,10 @@ export class TournamentsDto {
 	title: string
 
 	@IsString()
-	imageUrl: string
+	image: string
 
 	@IsString()
-	description: string
+	description?: string
 
 	@IsString()
 	@IsOptional()
