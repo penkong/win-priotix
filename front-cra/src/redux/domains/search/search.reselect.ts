@@ -26,3 +26,11 @@ const contentItems = (state: IApplicationStateModel) =>
 // -----------------------------------------------------------------
 
 export const contentSelector = createSelector([contentItems], (info) => info)
+
+// -----------------------------------------------------------------
+
+const getUserName = (state: IApplicationStateModel) => state.search.username
+
+// -----------------------------------------------------------------
+
+export const userNameSelector = createSelector([getUserName], (info) => info)

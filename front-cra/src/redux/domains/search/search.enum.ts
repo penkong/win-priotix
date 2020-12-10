@@ -1,4 +1,8 @@
 export enum EnumSearchAction {
+	// ---------------- UserName ----------------
+
+	SET_USERNAME = 'SET_USERNAME',
+
 	// ---------------- Loading ----------------
 
 	SEARCH_LOADING_START = 'SEARCH_LOADING_START',

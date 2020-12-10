@@ -1,4 +1,5 @@
 export interface ISearchStateModel {
+	username: string
 	searchInfo: ISearchInfo[] | []
 	selectedItem: ISelectedItem[] | []
 	errorMessage: string
@@ -14,6 +15,7 @@ export interface ISearchInfo {
 
 export interface ISelectedItem {
 	id?: string
+	username?: string
 	tournament_id: string
 	image: string
 	title: string

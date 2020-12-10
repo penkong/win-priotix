@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom'
 
 // ------------------------ Local ----------------------------------
 
-import { Landing, Test } from './pages'
+import { Landing, Test, Search } from './pages'
 
 // -----------------------------------------------------------------
 
@@ -17,6 +17,7 @@ export const App: React.FC<IAppProps> = () => {
 	return (
 		<Switch>
 			<Route exact path="/test" component={Test} />
+			<Route exact path="/search" component={Search} />
 			<Route exact path="/" component={Landing} />
 		</Switch>
 	)

@@ -4,7 +4,17 @@
 
 import { ISearchInfo, ISelectedItem, EnumSearchAction } from '.'
 
-// -----------------------------------------------------------------
+// ------------------------- Loading Action ---------------------------------
+
+export interface SetUserNameStartActionType {
+	type: EnumSearchAction.SET_USERNAME
+	payload: string
+}
+
+export const SetUserNameStartAction = (username: string) => ({
+	type: EnumSearchAction.SET_USERNAME,
+	payload: username
+})
 
 // ------------------------- Loading Action ---------------------------------
 
@@ -97,6 +107,7 @@ export const SearchChooseFailureAction = (
 // --------------------------------------------------------------------------------
 
 export type SearchAction =
+	| typeof SetUserNameStartAction
 	| typeof SearchLoadingStartAction
 	| typeof SearchGetStartAction
 	| typeof SearchGetSuccessAction
@@ -106,6 +117,7 @@ export type SearchAction =
 	| typeof SearchChooseFailureAction
 
 export type SearchActionsType =
+	| SetUserNameStartActionType
 	| SearchLoadingStartActionType
 	| SearchGetStartActionType
 	| SearchGetSuccessActionType

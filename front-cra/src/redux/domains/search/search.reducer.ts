@@ -9,6 +9,7 @@ import { ISearchStateModel, EnumSearchAction, SearchActionsType } from '.'
 //  ----------------------- Raw State -----------------------------
 
 const INITIAL_STATE: ISearchStateModel = {
+	username: '',
 	searchInfo: [],
 	selectedItem: [],
 	errorMessage: '',
@@ -23,6 +24,9 @@ export const searchReducer = (
 	action: SearchActionsType
 ) => {
 	switch (action.type) {
+		case EnumSearchAction.SET_USERNAME:
+			return { ...state, username: action.payload }
+
 		// ---
 
 		case EnumSearchAction.SEARCH_LOADING_START:
