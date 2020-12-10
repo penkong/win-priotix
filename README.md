@@ -143,6 +143,8 @@ npm run dev:cra
 
 #### Please let me know about any questions you have - project still under development
 
+#### TEST : please let me know if we need unit tests.
+
 also because UI and UX is another thing for consideration I use UI kit components and
 place of items for future .
 if you think it is enough please let me know .
