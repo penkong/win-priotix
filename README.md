@@ -149,4 +149,7 @@ also because UI and UX is another thing for consideration I use UI kit component
 place of items for future .
 if you think it is enough please let me know .
 
-update: from functionality point of view everything is fine but need a lot UI stuff to add.
+update: from functionality point of view everything is fine but need a lot UI stuff to add , I tried to show 
+main things in nutshell , I can handle any kind of tasks related to my stack and if there are defects consider 
+it with my timing prblem not as lack of konwledge .
+see you. 
